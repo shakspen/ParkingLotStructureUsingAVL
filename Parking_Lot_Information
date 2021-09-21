@@ -1,0 +1,33 @@
+Parking Lot Design 
+
+An apartment has 3 wings (wing-A, wing-B, wing C) with 10 floor each (9 residential floors and ground floor is dedicated for parking 
+vehicles). On each floor there are 4 flats (building capacity: 3*9*4=108).It has three parking levels such that Level A dedicated for 
+wing –A , Level B for wing – B and so on. Each parking level has multiple compact and large spots.  
+
+Parking Condition: Two-wheelers can be parked in any spots. Four-wheelers can be parked in one large spot or two consecutive compact spots.
+ 
+Details need to be stored: 
+ Parking_Lot details to store parking spots information like Parking_level, dedicated_wing, no_of_compact_spots, no_of_large_spots, 
+status_compactspots(array storing which spots are occupied or not), status_large_spots(array storing which spots are occupied or not).  
+Flat_Details to store floor and wings details like wing_id, flat_id, no_of_two_wheelers,  no_of_four_wheelers. 
+
+Write a program to implement following functions- 
+1. Add_or_map_vehicle_Node() : whenever new vehicle is purchased by flat owner it should be added to corresponding parking spot as per
+parking condition given above. If any flat occupant cannot get parking spots in their respective parking level then remaining parking 
+levels in order (i.e. if A is full then first B is searched and then C) should be taken into consideration. If any occupant has more 
+than 1 four wheeler then only one large spot should be allocated in parking level dedicated to wing and others should be allocated other 
+than dedicated parking level. This function will map permanent parking spot to flat owner vehicles but their status will not be allocated 
+all time. At the end this function should display vehicle mapping status for all levels in tree representation. 
+
+2. Write a function Park_vehicle () which will allocate mapped parking spot to vehicle just by reading vehicle number. 
+Note:   If the vehicle number is not mapped with any parking spot then it is considered as guest vehicle. In such cases any free spot 
+depending on vehicle type will be allocated.  For mapped vehicle if the spot is not free, then first free spot in any parking level can be 
+allocated (but the search should start with vehicle owners dedicated parking level).  This function should keep track on date, time, inside
+rs and visitors, vehicle number for visitors. 
+
+3. Remove_vehicle_node (): if any flat owner sells his vehicle then corresponding entry from parking tree should be removed. 
+
+4. Write a function Display_Visitors() to get all visitors on particular date along with their vehicle type and number and parking level , 
+parking spot details. 
+
+5. Write a function Parking_status () to display the list of free and allocated parking spots in each parking level. 
